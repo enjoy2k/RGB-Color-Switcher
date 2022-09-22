@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
 //        Color preview
-        
         colorPreview.layer.cornerRadius = 15
         
 //        Red slider
@@ -31,10 +30,8 @@ class ViewController: UIViewController {
         redSlider.maximumValue = 1
         
         redIndicator.text = String(redSlider.value)
-       
         
 //        Green slider
-
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
         
@@ -63,6 +60,4 @@ class ViewController: UIViewController {
         blueIndicator.text = String(format: "%.2f",blueSlider.value)
         colorChange()
     }
-    
 }
-
