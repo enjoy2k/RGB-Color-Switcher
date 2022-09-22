@@ -22,29 +22,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Color preview
         colorPreview.layer.cornerRadius = 15
         
-//        Red slider
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 1
-        
-        redIndicator.text = String(redSlider.value)
-        
-//        Green slider
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 1
-        
-        greenIndicator.text = String(greenSlider.value)
-        
-//        Blue slider
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 1
-        
-        blueIndicator.text = String(blueSlider.value)
+        colorPreview.backgroundColor = UIColor(displayP3Red:
+        CGFloat(redSlider.value), green:
+        CGFloat(greenSlider.value), blue:
+        CGFloat(blueSlider.value), alpha: 1)
+
+        redIndicator.text = String(format: "%.2f", redSlider.value)
+        greenIndicator.text = String(format: "%.2f", greenSlider.value)
+        blueIndicator.text = String(format: "%.2f", blueSlider.value)
     }
     func colorChange() {
-        colorPreview.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        colorPreview.backgroundColor = UIColor(displayP3Red:
+        CGFloat(redSlider.value), green:
+        CGFloat(greenSlider.value), blue:
+        CGFloat(blueSlider.value), alpha: 1)
     }
     @IBAction func redSliderAction() {
         redIndicator.text = String(format: "%.2f", redSlider.value)
@@ -52,12 +45,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func greenSliderAction() {
-        greenIndicator.text = String(format: "%.2f",greenSlider.value)
+        greenIndicator.text = String(format: "%.2f", greenSlider.value)
         colorChange()
     }
     
     @IBAction func blueSliderAction() {
-        blueIndicator.text = String(format: "%.2f",blueSlider.value)
+        blueIndicator.text = String(format: "%.2f", blueSlider.value)
         colorChange()
     }
 }
