@@ -22,11 +22,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        Color preview
+//        Color preview                       Вот эти разделители были не нужны, поскольку кода не много
         colorPreview.layer.cornerRadius = 15
         
 //        Red slider
-        redSlider.minimumValue = 0
+        redSlider.minimumValue = 0         // Вот эти штуки тоже не нужны. Во вью контроллере выставляются
         redSlider.maximumValue = 1
         
         redIndicator.text = String(redSlider.value)
