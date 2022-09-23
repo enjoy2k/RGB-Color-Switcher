@@ -26,9 +26,7 @@ class ViewController: UIViewController {
         
         setColor()
         
-        redIndicator.text = string(from: redSlider)
-        greenIndicator.text = string(from: greenSlider)
-        blueIndicator.text = string(from: blueSlider)
+        setValue(for: redIndicator, greenIndicator, blueIndicator) // Здесь так же не обязательно вызывать функцию трижды. Достаточно указать несколько параметров через запятую
     }
     
     @IBAction func rgbSlider(_ sender: UISlider) {
@@ -42,7 +40,8 @@ class ViewController: UIViewController {
         redIndicator.text = String(format: "%.2f", redSlider.value)
         greenIndicator.text = String(format: "%.2f", greenSlider.value)
         blueIndicator.text = String(format: "%.2f", blueSlider.value)
-    } // Вот здесь очень интересно получается) Каждый раз прикасаясь к любому из слайдеров, в соответствующий лэйбл передаётся значение. А два остальных слайдера значений не меняют, НО ОБНОВЛЯЮТ ИХ! Так как код воспроизводится каждый раз при касании слайдера! И это говорит мне о том что код не оптимальный, и его нужно оптимизировать
+    }
+    
     private func setColor() {
         colorPreview.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
@@ -51,7 +50,21 @@ class ViewController: UIViewController {
             alpha: 1
         ) // Обязательно: Метод должен быть обязательно приватным! Располагаться он должен после аутлетов и IBAction'ов!
     }
+    
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
+    
+    private func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redIndicator:
+                redIndicator.text = string(from: redSlider)
+            case greenIndicator:
+                greenIndicator.text = string(from: greenSlider)
+            default:
+                blueIndicator.text = string(from: blueSlider)
+            }
+        }
+    } // В скобках, после указания типа данных, троеточие обозначает вариативный параметр. При использовании вариативного параметра, все значения, которые передаются в параметр, помещаются в массив!
 }
