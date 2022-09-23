@@ -77,21 +77,21 @@
                                         <rect key="frame" x="-2" y="0.0" width="261" height="38.666666666666664"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
-                                            <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="t7n-jR-7Pj"/>
+                                            <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="egl-pt-Tco"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="02n-GL-2m8">
                                         <rect key="frame" x="-2" y="65.666666666666629" width="261" height="38.666666666666657"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="Hhw-Yp-JeN"/>
+                                            <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="YPR-lN-cLj"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RSx-2h-0IM">
                                         <rect key="frame" x="-2" y="131.33333333333331" width="261" height="39"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <connections>
-                                            <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="vQh-QU-F0r"/>
+                                            <action selector="rgbSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="yGX-5t-Sd5"/>
                                         </connections>
                                     </slider>
                                 </subviews>
