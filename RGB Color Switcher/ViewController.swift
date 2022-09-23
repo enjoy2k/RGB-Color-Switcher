@@ -43,8 +43,8 @@ class ViewController: UIViewController {
         
         blueIndicator.text = String(blueSlider.value)
     }
-    func colorChange() {
-        colorPreview.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+    func colorChange() {                // Метод должен быть приватным!
+        colorPreview.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1) // СТРОКУ НУЖНО СНОСИТЬ!
     }
     @IBAction func redSliderAction() {
         redIndicator.text = String(format: "%.2f", redSlider.value)
