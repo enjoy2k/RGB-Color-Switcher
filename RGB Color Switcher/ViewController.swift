@@ -30,12 +30,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func rgbSlider(_ sender: UISlider) {
-        colorPreview.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
-            alpha: 1
-        )
+       setColor()
+        
+        switch sender {
+        case redSlider: redIndicator.text = string(from: redSlider)
+        case greenSlider: greenIndicator.text = string(from: greenSlider)
+        default: blueIndicator.text = string(from: blueSlider)
+        }
         
         redIndicator.text = String(format: "%.2f", redSlider.value)
         greenIndicator.text = String(format: "%.2f", greenSlider.value)
