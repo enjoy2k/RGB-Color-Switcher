@@ -33,14 +33,13 @@ class ViewController: UIViewController {
        setColor()
         
         switch sender {
-        case redSlider: redIndicator.text = string(from: redSlider)
-        case greenSlider: greenIndicator.text = string(from: greenSlider)
-        default: blueIndicator.text = string(from: blueSlider)
-        }
-        
-        redIndicator.text = String(format: "%.2f", redSlider.value)
-        greenIndicator.text = String(format: "%.2f", greenSlider.value)
-        blueIndicator.text = String(format: "%.2f", blueSlider.value)
+        case redSlider:
+            redIndicator.text = string(from: redSlider)
+        case greenSlider:
+            greenIndicator.text = string(from: greenSlider)
+        default:
+            blueIndicator.text = string(from: blueSlider)
+        } // Здесь я сделал свич чтобы была возможность менять значение только одного слайдера. В этом случае, когда пользователь меняет значение одного из слайдеров, остальные свои значения не обновляют!
     }
     
     private func setColor() {
